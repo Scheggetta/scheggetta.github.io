@@ -3,8 +3,10 @@
   {% include head.html %}
   <body>
     <nav>{% include nav.html %}</nav>
-    <div class="wrapper">
+    <div class="wrapper-main-content">
       <main>{{ content }}</main>
+    </div>
+    <div class="wrapper-footer">
       <footer>{% include footer.html %}</footer>
     </div>
 
@@ -12,3 +14,12 @@
     <script src="{{ '/assets/theme-switch.js' | relative_url }}"></script>
   </body>
 </html>
+
+<style>
+  .wrapper-footer {
+    /* decrease margin-top if needed with negative number */
+    margin-top: 0;
+    /* auto width */
+    display: flex;
+  }
+</style>
