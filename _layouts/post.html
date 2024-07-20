@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+<article>
+  <div>
+    <h1>{{ page.title }}</h1>
+    <time>
+      Last updated on {{ page.date | date: "%B %-d, %Y" }}
+    </time>
+  </div>
+
+  <div id="posts-entry-container">
+    <content>
+      {{ content }}
+      <p>Until the next time, bye!</p>
+    </content>
+
+    <side style="font-size: 0.9em">
+      <h3 style="margin-bottom: 1em">Posts mentioning this post</h3>
+      {% if page.backlinks.size > 0 %}
+      <div style="display: grid; grid-gap: 1em; grid-template-columns: repeat(1fr);">
+      {% for backlink in page.backlinks %}
+        <div class="backlink-box">
+        <a class="internal-link" href="{{ site.baseurl }}{{ backlink.url }}">{{ backlink.title }}</a><br>
+        <div style="font-size: 0.9em">{{ backlink.excerpt }}</div>
+        </div>
+      {% endfor %}
+      </div>
+      {% else %}
+
+      <div style="font-size: 0.9em">
+        <p>
+          There are no posts linking to this post.
+        </p>
+      </div>
+      {% endif %}
+    </side>
+  </div>
+</article>

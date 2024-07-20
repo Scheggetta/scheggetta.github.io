@@ -1,0 +1,503 @@
+---
+---
+
+
+@import "../_sass/normalize";
+
+
+// Define CSS variables for light mode
+:root {
+  --color-primary: hsl(0, 0%, 10%);
+  --color-text: hsl(0, 0%, 20%);
+  --color-subtext: hsl(0, 0%, 30%);
+  --color-border: hsl(0, 0%, 85%);
+  --color-box-background: hsl(0, 0%, 96%);
+  --color-background: white;
+
+  --color-footer-text: rgba(0, 0, 0, 0.7);  // Semi-transparent black
+  --color-hover: black !important;
+  --color-hover-background: #fffaf1;
+  --color-hover-after: #aaaaaa;
+  --color-focus: black !important;
+  --color-focus-background: #ffe8bc !important;
+  --color-invalid-link: #444444;
+  --color-invalid-link-background: #fafafa;
+  --color-invalid-link-brackets: #cccccc;
+
+  --tooltip-background: hsl(0, 0%, 96%);
+  --tooltip-text: hsl(0, 0%, 20%);
+  --tooltip-border: #8b88e6;
+
+  --icon-color-light: #000000;
+  --icon-color-dark: #ffffff;
+
+  --hl-c: #999988;
+  --hl-ch: #999988;
+  --hl-cd: #999988;
+  --hl-cpf: #999988;
+  --hl-cm: #999988;
+  --hl-c1: #999988;
+  --hl-cp: #999999;
+  --hl-cs: #999999;
+  --hl-err: #a61717;
+  --hl-err-background: #e3d2d2;
+  --hl-gi: #000000;
+  --hl-gi-background: #ddffdd;
+  --hl-gd: #000000;
+  --hl-gd-background: #ffdddd;
+  --hl-ge: #000000;
+  --hl-gr: #aa0000;
+  --hl-gt: #aa0000;
+  --hl-gh: #999999;
+  --hl-go: #888888;
+  --hl-gp: #555555;
+  --hl-gu: #aaaaaa;
+  --hl-k: #000000;
+  --hl-kv: #000000;
+  --hl-kc: #000000;
+  --hl-kd: #000000;
+  --hl-kp: #000000;
+  --hl-kr: #000000;
+  --hl-kt: #445588;
+  --hl-kn: #000000;
+  --hl-ow: #000000;
+  --hl-o: #000000;
+  --hl-mf: #009999;
+  --hl-mh: #009999;
+  --hl-il: #009999;
+  --hl-mi: #009999;
+  --hl-mo: #009999;
+  --hl-m: #009999;
+  --hl-mb: #009999;
+  --hl-mx: #009999;
+  --hl-se: #dd1144;
+  --hl-sa: #000000;
+  --hl-sb: #dd1144;
+  --hl-sc: #dd1144;
+  --hl-sd: #dd1144;
+  --hl-s2: #dd1144;
+  --hl-sh: #dd1144;
+  --hl-si: #dd1144;
+  --hl-sx: #dd1144;
+  --hl-sr: #009926;
+  --hl-s1: #dd1144;
+  --hl-ss: #990073;
+  --hl-s: #dd1144;
+  --hl-dl: #dd1144;
+  --hl-na: #008080;
+  --hl-nc: #445588;
+  --hl-nd: #3c5d5d;
+  --hl-ne: #990000;
+  --hl-nf: #990000;
+  --hl-fm: #990000;
+  --hl-no: #008080;
+  --hl-bp: #999999;
+  --hl-nb: #0086B3;
+  --hl-ni: #800080;
+  --hl-nn: #555555;
+  --hl-vc: #008080;
+  --hl-vg: #008080;
+  --hl-vi: #008080;
+  --hl-nv: #008080;
+  --hl-vm: #008080;
+  --hl-w: #bbbbbb;
+  --hl-nl: #990000;
+  --hl-nt: #000080;
+
+  --hl-color: #000000; /* not defined in the original css */
+  --hl-background-color: #f8f8f8;
+}
+
+// Define CSS variables for dark mode
+[data-theme="dark"] {
+  --color-primary: hsl(0, 0%, 90%);
+  --color-text: hsl(0, 0%, 80%);
+  --color-subtext: hsl(0, 0%, 70%);
+  --color-border: hsl(0, 0%, 30%);
+  --color-box-background: hsl(0, 0%, 20%);
+  --color-background: hsl(0, 0%, 10%);
+
+  --color-footer-text: rgba(255, 255, 255, 0.7);  // Semi-transparent white
+  --color-hover: white !important;
+  --color-hover-background: #00050e;
+  --color-hover-after: #555555;
+  --color-focus: white !important;
+  --color-focus-background: #001743 !important;
+  --color-invalid-link: #bbbbbb;
+  --color-invalid-link-background: #050505;
+  --color-invalid-link-brackets: #333333;
+
+  --tooltip-background: hsl(0, 0%, 20%);
+  --tooltip-text: hsl(0, 0%, 80%);
+  --tooltip-border: #747719;
+
+  --hl-c: #75715e;
+  --hl-ch: #75715e;
+  --hl-cd: #75715e;
+  --hl-cpf: #75715e;
+  --hl-cm: #75715e;
+  --hl-c1: #75715e;
+  --hl-cp: #75715e;
+  --hl-cs: #75715e;
+  --hl-err: #960050;
+  --hl-err-background: #1e0010;
+  --hl-gi: #ffffff;
+  --hl-gi-background: #324932;
+  --hl-gd: #ffffff;
+  --hl-gd-background: #493131;
+  --hl-ge: #000000;
+  --hl-gr: #aa0000;
+  --hl-gt: #aa0000;
+  --hl-gh: #999999;
+  --hl-go: #888888;
+  --hl-gp: #555555;
+  --hl-gu: #aaaaaa;
+  --hl-k: #66d9ef;
+  --hl-kv: #66d9ef;
+  --hl-kc: #66d9ef;
+  --hl-kd: #66d9ef;
+  --hl-kp: #66d9ef;
+  --hl-kr: #66d9ef;
+  --hl-kt: #66d9ef;
+  --hl-kn: #f92672;
+  --hl-ow: #f92672;
+  --hl-o: #f92672;
+  --hl-mf: #ae81ff;
+  --hl-mh: #ae81ff;
+  --hl-il: #ae81ff;
+  --hl-mi: #ae81ff;
+  --hl-mo: #ae81ff;
+  --hl-m: #ae81ff;
+  --hl-mb: #ae81ff;
+  --hl-mx: #ae81ff;
+  --hl-se: #ae81ff;
+  --hl-sa: #66d9ef;
+  --hl-sb: #e6db74;
+  --hl-sc: #e6db74;
+  --hl-sd: #e6db74;
+  --hl-s2: #e6db74;
+  --hl-sh: #e6db74;
+  --hl-si: #e6db74;
+  --hl-sx: #e6db74;
+  --hl-sr: #e6db74;
+  --hl-s1: #e6db74;
+  --hl-ss: #e6db74;
+  --hl-s: #e6db74;
+  --hl-dl: #e6db74;
+  --hl-na: #a6e22e;
+  --hl-nc: #a6e22e;
+  --hl-nd: #a6e22e;
+  --hl-ne: #a6e22e;
+  --hl-nf: #a6e22e;
+  --hl-fm: #a6e22e;
+  --hl-no: #66d9ef;
+  --hl-bp: #f8f8f2;
+  --hl-nb: #f8f8f2;
+  --hl-ni: #f8f8f2;
+  --hl-nn: #f8f8f2;
+  --hl-vc: #f8f8f2;
+  --hl-vg: #f8f8f2;
+  --hl-vi: #f8f8f2;
+  --hl-nv: #f8f8f2;
+  --hl-vm: #f8f8f2;
+  --hl-w: #f8f8f2;
+  --hl-nl: #f8f8f2;
+  --hl-nt: #f92672;
+
+  --hl-color: #f8f8f2;
+  --hl-background-color: #49483e;
+}
+
+$border-radius: 4px;
+$font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+  sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+
+
+body {
+  box-sizing: content-box;
+  font-family: $font-family;
+  margin: 0 auto;
+  line-height: 1.7;
+  padding: 4vh 6vw;
+  overflow-x: hidden;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  font-size: 1rem;
+  max-width: 63em;
+
+  @media (min-width: 820px) {
+    font-size: 1.2rem;
+  }
+}
+
+.theme-transition-ready body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .sun-icon {
+    display: none;
+  }
+
+  .moon-icon {
+    display: block;
+  }
+}
+
+[data-theme="dark"] #theme-toggle {
+  .sun-icon {
+    display: block;
+  }
+
+  .moon-icon {
+    display: none;
+  }
+}
+
+.sun-icon, .moon-icon {
+  stroke: var(--icon-color-light);
+}
+
+[data-theme="dark"] #theme-toggle .sun-icon,
+[data-theme="dark"] #theme-toggle .moon-icon {
+  stroke: var(--icon-color-dark);
+}
+
+#theme-toggle:focus {
+  outline: none;
+  background-color: rgba(128, 128, 128, 0.1); // Light gray background
+  border-radius: 50%; // Make it circular
+
+  svg {
+    stroke: var(--color-primary);
+  }
+}
+
+time {
+  display: block;
+  color: var(--color-subtext);
+  margin: 0.5em 0 1em;
+}
+
+footer {
+  margin: 2em 0;
+  font-size: 0.8em;
+  color: var(--color-footer-text);
+  padding-top: 1em;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  max-height: 75vh;
+  border-radius: $border-radius;
+}
+
+blockquote {
+  padding: 1.5em;
+  margin: 0;
+  font-size: 0.88em;
+  background: var(--color-box-background);
+  border-radius: $border-radius;
+
+  p {
+    margin: 0;
+  }
+}
+
+hr {
+  width: 100%;
+  border: 0;
+  height: 1px;
+  margin: 1.5em 0;
+  background: var(--color-border);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.3;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+a {
+  transition: background 300ms;
+  padding: 0 0.1em;
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-primary);
+  &:hover {
+    color: var(--color-hover);
+    background: var(--color-hover-background);
+  }
+  &:after {
+    position: relative;
+    top: -0.5em;
+    font-size: 0.7em;
+    content: "↗";
+    color: var(--color-hover-after);
+  }
+  &.internal-link:after,
+  &.footnote:after,
+  &.reversefootnote:after {
+    content: "";
+  }
+}
+
+*:focus {
+  background: var(--color-focus-background);
+  color: var(--color-focus);
+}
+
+nav {
+  margin: 1em 0 3em;
+}
+
+#posts-entry-container {
+  display: grid;
+  grid-gap: 2em;
+  grid-template-areas:
+    "content"
+    "side";
+
+  @media (min-width: 700px) {
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: "content side";
+  }
+}
+
+.backlink-box {
+  background: var(--color-box-background);
+  padding: 1em;
+  border-radius: $border-radius;
+}
+
+/*code {
+  background: #f5f5f5;
+  padding: 0.1em 0.2em;
+  border-radius: 4px;
+}*/
+
+.invalid-link {
+  color: var(--color-invalid-link);
+  cursor: help;
+  background: var(--color-invalid-link-background);
+  padding: 0 0.1em;
+}
+
+.invalid-link-brackets {
+  color: var(--color-invalid-link-brackets);
+  cursor: help;
+}
+
+/*
+#mark {
+  background-color: yellow;
+  color: black;
+}
+*/
+
+.highlight {
+  color: var(--hl-color);
+  background-color: var(--hl-background-color);
+}
+
+.highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+
+.highlight .c { color: var(--hl-c); font-style: italic; }
+.highlight .ch { color: var(--hl-ch); font-style: italic; }
+.highlight .cd { color: var(--hl-cd); font-style: italic; }
+.highlight .cpf { color: var(--hl-cpf); font-style: italic; }
+.highlight .cm { color: var(--hl-cm); font-style: italic; }
+.highlight .c1 { color: var(--hl-c1); font-style: italic; }
+.highlight .cp { color: var(--hl-cp); font-style: italic; }
+.highlight .cs { color: var(--hl-cs); font-style: italic; font-weight: bold; }
+.highlight .err { color: var(--hl-err); background-color: var(--hl-err-background); }
+.highlight .gi { color: var(--hl-gi); background-color: var(--hl-gi-background); }
+.highlight .gd { color: var(--hl-gd); background-color: var(--hl-gd-background); }
+.highlight .ge { color: var(--gl-ge); font-style: italic; }
+.highlight .gr { color: var(--hl-gr); }
+.highlight .gt { color: var(--hl-gt); }
+.highlight .gh { color: var(--hl-gh); }
+.highlight .go { color: var(--hl-go); }
+.highlight .gp { color: var(--hl-gp); }
+.highlight .gs { font-weight: bold; }
+.highlight .gu { color: var(--hl-gu); }
+.highlight .k { color: var(--hl-k); font-weight: bold; }
+.highlight .kv { color: var(--hl-kv); font-weight: bold; }
+.highlight .kc { color: var(--hl-kc); font-weight: bold; }
+.highlight .kd { color: var(--hl-kd); font-weight: bold; }
+.highlight .kp { color: var(--hl-kp); font-weight: bold; }
+.highlight .kr { color: var(--hl-kr); font-weight: bold; }
+.highlight .kt { color: var(--hl-kt); font-weight: bold; }
+.highlight .kn { color: var(--hl-kn); font-weight: bold; }
+.highlight .ow { color: var(--hl-ow); font-weight: bold; }
+.highlight .o { color: var(--hl-o); font-weight: bold; }
+.highlight .mf { color: var(--hl-mf); }
+.highlight .mh { color: var(--hl-mh); }
+.highlight .il { color: var(--hl-il); }
+.highlight .mi { color: var(--hl-mi); }
+.highlight .mo { color: var(--hl-mo); }
+.highlight .m { color: var(--hl-m); }
+.highlight .mb { color: var(--hl-mb); }
+.highlight .mx { color: var(--hl-mx); }
+.highlight .se { color: var(--hl-se); }
+.highlight .sa { color: var(--hl-sa); font-weight: bold; }
+.highlight .sb { color: var(--hl-sb); }
+.highlight .sc { color: var(--hl-sc); }
+.highlight .sd { color: var(--hl-sd); }
+.highlight .s2 { color: var(--hl-s2); }
+.highlight .sh { color: var(--hl-sh); }
+.highlight .si { color: var(--hl-si); }
+.highlight .sx { color: var(--hl-sx); }
+.highlight .sr { color: var(--hl-sr); }
+.highlight .s1 { color: var(--hl-s1); }
+.highlight .ss { color: var(--hl-ss); }
+.highlight .s { color: var(--hl-s); }
+.highlight .dl { color: var(--hl-dl); }
+.highlight .na { color: var(--hl-na); }
+.highlight .nc { color: var(--hl-nc); font-weight: bold; }
+.highlight .nd { color: var(--hl-nd); font-weight: bold; }
+.highlight .ne { color: var(--hl-ne); font-weight: bold; }
+.highlight .nf { color: var(--hl-nf); font-weight: bold; }
+.highlight .fm { color: var(--hl-fm); font-weight: bold; }
+.highlight .no { color: var(--hl-no); }
+.highlight .bp { color: var(--hl-bp); }
+.highlight .nb { color: var(--hl-nb); }
+.highlight .ni { color: var(--hl-ni); }
+.highlight .nn { color: var(--hl-nn); }
+.highlight .vc { color: var(--hl-vc); }
+.highlight .vg { color: var(--hl-vg); }
+.highlight .vi { color: var(--hl-vi); }
+.highlight .nv { color: var(--hl-nv); }
+.highlight .vm { color: var(--hl-vm); }
+.highlight .w { color: var(--hl-w); }
+.highlight .nl { color: var(--hl-nl); font-weight: bold; }
+.highlight .nt { color: var(--hl-nt); }
+
+
+// Some basic styling for code blocks
+pre.highlight {
+  padding: 1em;
+  overflow-x: auto;
+  border-radius: 4px;
+}

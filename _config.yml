@@ -1,0 +1,47 @@
+title: fusa.science
+include: []
+exclude:
+  - _data/notes_graph.json
+
+# You may need to change the base URL depending on your deploy configuration.
+baseurl: ''
+
+# Set to `true` to open non-internal links in new tabs, or
+# set to `false` to open non-internal links in current tab.
+open_external_links_in_new_tab: true
+
+# Set to `true` to disable custom plugins located in the `_plugins` directory.
+safe: false
+
+permalink: pretty
+relative_permalinks: false
+
+plugins:
+  - jekyll-seo-tag
+
+sass:
+  sass_dir: _sass
+  style: :compressed
+
+markdown: kramdown
+highlighter: rouge
+
+defaults:
+  - scope:
+      path: "**/*"
+    values:
+      layout: "default"
+      author: Edoardo Fusa
+      logo: "/assets/logo_heart.png"
+      seo_description_max_words: 200
+      social:
+        name: Edoardo Fusa
+        links:
+          - https://linkedin.com/in/edoardo-fusa
+          - https://github.com/Scheggetta
+
+  - scope:
+      path: "_posts/**/*.md"
+    values:
+      layout: "post"
+      excerpt_separator: "<!--more-->"
