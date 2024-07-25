@@ -278,15 +278,7 @@ Sure, let's take a closer look at the last part of the proof for part (a) of the
 Here's the transcription of the relevant portion:
 
 ```
-Suppose now that A has the form (∃x B).
-Let σ and τ be as in the theorem.
-If υσ(∃x B) = T, then there is some γ that differs from
-σ at most in what it assigns to x, such that υγ(B) = T.
-Fix such a γ, and define ρ to be the same as τ except that
-ρ(x) = γ(x). Then ρ and γ agree on all variables free in B,
-so by induction υρ(B) = T. And hence υτ(∃x B) = T. The
-same argument works with the roles of σ and τ reversed,
-so υσ(∃x B) = υτ(∃x B).
+Suppose now that A has the form (∃x B). Let σ and τ be as in the theorem. If υσ(∃x B) = T, then there is some γ that differs from σ at most in what it assigns to x, such that υγ(B) = T. Fix such a γ, and define ρ to be the same as τ except that ρ(x) = γ(x). Then ρ and γ agree on all variables free in B, so by induction υρ(B) = T. And hence υτ(∃x B) = T. The same argument works with the roles of σ and τ reversed, so υσ(∃x B) = υτ(∃x B).
 ```
 
 ### Explanation

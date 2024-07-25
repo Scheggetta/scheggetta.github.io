@@ -538,8 +538,48 @@ mark {
 
 
 // Some basic styling for code blocks
-pre.highlight {
+/* Ensure code blocks don't extend beyond their container */
+.highlighter-rouge {
+  max-width: 100%;
+  margin-bottom: 1em;
+}
+
+/* Style for code blocks */
+.highlight pre {
+  word-break: break-word;
+  overflow-wrap: break-word;
   padding: 1em;
-  overflow-x: auto;
   border-radius: 4px;
+  margin: 0;
+}
+
+/* For inline code */
+code {
+  white-space: normal;
+  word-wrap: break-word;
+  border-radius: 4px;
+}
+
+/* For very long words or URLs */
+.post-content, .e-content {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Adjust the width of the main content area if necessary */
+.wrapper-main-content {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure the highlight background extends full width */
+.highlight {
+  border-radius: 4px;
+  margin-bottom: 1em;
+}
+
+/* Ensure code lines break and wrap */
+.highlight code {
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
