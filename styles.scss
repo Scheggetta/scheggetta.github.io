@@ -28,6 +28,8 @@
   --tooltip-text: hsl(0, 0%, 20%);
   --tooltip-border: #8b88e6;
 
+  --color-mark: yellow;
+
   --icon-color-light: #000000;
   --icon-color-dark: #ffffff;
 
@@ -130,6 +132,8 @@
   --tooltip-background: hsl(0, 0%, 20%);
   --tooltip-text: hsl(0, 0%, 80%);
   --tooltip-border: #747719;
+
+  --color-mark: #0059ff;
 
   --hl-c: #75715e;
   --hl-ch: #75715e;
@@ -446,12 +450,12 @@ nav {
   cursor: help;
 }
 
-/*
-#mark {
-  background-color: yellow;
-  color: black;
+
+mark {
+  background-color: var(--color-mark);
+  border-radius: 4px;
 }
-*/
+
 
 .highlight {
   color: var(--hl-color);
