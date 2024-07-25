@@ -7,6 +7,8 @@
 
 // Define CSS variables for light mode
 :root {
+  --content-max-width: 46em;
+
   --color-primary: hsl(0, 0%, 10%);
   --color-text: hsl(0, 0%, 20%);
   --color-subtext: hsl(0, 0%, 30%);
@@ -540,12 +542,13 @@ mark {
 // Some basic styling for code blocks
 /* Ensure code blocks don't extend beyond their container */
 .highlighter-rouge {
-  max-width: 100%;
+  max-width: var(--content-max-width);
   margin-bottom: 1em;
 }
 
 /* Style for code blocks */
 .highlight pre {
+  max-width: var(--content-max-width);
   word-break: break-word;
   overflow-wrap: break-word;
   padding: 1em;
@@ -555,6 +558,7 @@ mark {
 
 /* For inline code */
 code {
+  max-width: var(--content-max-width);
   white-space: normal;
   word-wrap: break-word;
   border-radius: 4px;
@@ -580,6 +584,7 @@ code {
 
 /* Ensure code lines break and wrap */
 .highlight code {
+  max-width: var(--content-max-width);
   white-space: pre-wrap;
   word-wrap: break-word;
 }
