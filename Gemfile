@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 # gem "github-pages", "~> 231", group: :jekyll_plugins
 
-gem "jekyll", "~> 3.9.5"  # Version 4.0.0 is not compatible with GitHub Pages and probably breaks the build
+gem "jekyll", "~> 4.3.4"  # Version 4.0.0 is not compatible with GitHub Pages and probably breaks the build
 gem "webrick"
 gem "nokogiri"
 
