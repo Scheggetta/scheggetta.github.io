@@ -5,7 +5,7 @@ title: Home
 
 # IMO an aligned AGI wouldn't hurt now
 
-Hello 🌍, my name is Edoardo Fusa, and I am currently pursuing a Master's degree in Artificial Intelligence at the
+Hello 🌍, my name is Edoardo Fusa, and I have recently graduated with a Master's degree in Artificial Intelligence at the
 University of Bologna. I love science, and I love even more to talk about it with other people.
 
 To understand my way of reasoning, you should know that I have a Computer Science background, so the way I approach
